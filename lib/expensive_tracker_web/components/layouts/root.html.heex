@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" class="[scrollbar-gutter:stable]">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="csrf-token" content={get_csrf_token()} />
+    <.live_title suffix=" · Phoenix Framework">
+      <%= assigns[:page_title] || "ExpensiveTracker" %>
+    </.live_title>
+    <link phx-track-static rel="stylesheet" href={~p"/assets/app.css"} />
+    <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}>
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+                /* Add this to your CSS */
+            .gradient-header-footer {
+              background: linear-gradient(90deg, #4b6cb7, #182848);
+              clip-path: ellipse(50% 100% at 50% 0%);
+            }
+
+            footer.gradient-header-footer {
+              clip-path: ellipse(50% 100% at 50% 100%);
+            }
+
+            body {
+              background-color: #121212; /* dark background */
+              font-family: 'Poppins', sans-serif;
+            }
+
+            .container {
+              max-width: 1200px;
+              margin: 0 auto;
+            }
+
+                          @keyframes gradientBackground {
+                                0% { background-position: 0% 50%; }
+                                50% { background-position: 100% 50%; }
+                                100% { background-position: 0% 50%; }
+                            }
+                            .gradient-animation {
+                                background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb, #a18cd1, #fbc2eb);
+                                background-size: 400% 400%;
+                                animation: gradientBackground 15s ease infinite;
+                            }
+                            .gradient-header-footer {
+                                background: linear-gradient(to right, #4e54c8, #8f94fb);
+                            }
+                            /* Add these custom styles */
+                  .card {
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                  }
+
+                  .card:hover {
+                    transform: translateY(-10px);
+                    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+                  }
+
+                      
+                /* Add these styles */
+      .toggle-btn {
+        flex: 1;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        border: none;
+        cursor: pointer;
+        background-color: #f1f1f1;
+        color: #333;
+        border-radius: 0.5rem;
+        transition: background-color 0.3s ease;
+      }
+
+      .toggle-btn.active {
+        background-color: #4b6cb7;
+        color: white;
+      }
+
+      .toggle-btn:hover {
+        background-color: #4b6cb7;
+        color: white;
+      }
+
+          
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <%= @inner_content %>
+  </body>
+</html>

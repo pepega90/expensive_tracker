@@ -1,0 +1,36 @@
+<!-- Header -->
+<header class="gradient-header-footer text-white py-6">
+  <div class="container mx-auto text-center">
+    <h1 class="text-5xl font-bold">Expense Tracker</h1>
+    <p class="mt-2">Track your income and expenses effortlessly</p>
+  </div>
+</header>
+<main>
+  <%= @inner_content %>
+</main>
+<!-- Footer -->
+<footer class="gradient-header-footer text-white py-4">
+  <div class="container mx-auto text-center">
+    <p>&copy; 2024 Aji Mustofa. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+    // Add this script to your page
+  document.addEventListener("DOMContentLoaded", function() {
+    const incomeBtn = document.getElementById('income-btn');
+    const expenseBtn = document.getElementById('expense-btn');
+    const transactionTypeInput = document.getElementById('transaction-type');
+
+    incomeBtn.addEventListener('click', function() {
+      incomeBtn.classList.add('active');
+      expenseBtn.classList.remove('active');
+      transactionTypeInput.value = 'income';
+    });
+
+    expenseBtn.addEventListener('click', function() {
+      expenseBtn.classList.add('active');
+      incomeBtn.classList.remove('active');
+      transactionTypeInput.value = 'expense';
+    });
+  });
+</script>
